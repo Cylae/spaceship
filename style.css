@@ -1,0 +1,128 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	background: #222;
+	overflow-x: hidden;
+}
+
+header {
+	background: grey url(images/cityscape.png) repeat-x;
+	-webkit-animation: move-city-top 15s infinite linear;
+	height: 125px;
+	position: relative;
+	border-top: 10px solid darkblue;
+	border-bottom: 10px solid darkblue;
+}
+
+#rampage {
+	width: 300px;
+	height: 225px;
+	position: absolute;
+	top: -10px;
+	left: 1500px;
+	background: url(images/rampage.png) no-repeat;
+	z-index: 3;
+	-webkit-animation: 
+		shimmy-shimmy-shake 2s 2s infinite alternate,
+		show-yourself 1s 1;
+}
+
+#rampage:hover {
+    background: url(images/explosion.gif) no-repeat;
+    background-size: 80%;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#rampage img:hover{
+    margin-top: -150px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+#coptor {
+	position: absolute;
+	top: 30px;
+	left: 100%;
+    margin-left: -20%;
+	-webkit-animation: fly-by-night 3s linear infinite;
+	z-index: 50;
+}
+
+.bullet {
+	position: absolute;
+	top: 0px;
+	left: 49%;
+	opacity: 0;
+	-webkit-animation: kapow 2s 1.5s linear infinite;
+	z-index: 49;
+	width: 0px; 
+	height: 0px;
+	background: white;
+}
+
+#meteor{
+    position: absolute;
+	top: 30px;
+	left: 65%;
+    -webkit-animation: boom 2s 2s linear infinite;
+}
+
+#meteor2{
+    position: absolute;
+	top: 30px;
+	left: 30%;
+    -webkit-animation: boom2 10s 2s linear infinite;   
+}
+
+
+
+/* 
+	Animation Definitions 
+*/
+
+
+@-webkit-keyframes boom2 {
+    0% { top:-300px; left: 100px; }
+}
+
+@-webkit-keyframes boom {
+    0% { top:-300px; left: 1400px; }
+}
+
+@-webkit-keyframes move-city-top {
+	from { background-position: 0 -50px; }
+	to   { background-position: -533px -50px; }
+}
+
+@-webkit-keyframes shimmy-shimmy-shake {
+	0%  {  top: -30px; left: 1500px; }
+	20% { top: -35px; left: 1550px;   }
+	60% { top: -25px; left: 1550px;   }
+	80% { top: -30px; left: 1500px;   }
+	100% { top: -30px; left: 1500px; }
+}
+
+@-webkit-keyframes show-yourself {
+	from { left: 3500px; }
+	to   { left: 1500px; }
+}
+
+@-webkit-keyframes fly-by-night {
+	0%  {  top: 30px; left: 1%; }
+	20% { top: 35px; left: 2%;   }
+	40% { top: 30px; left: 1%;   }
+	60% { top: 25px; left: 2%;   }
+	80% { top: 30px; left: 1%;   }
+    90% { top:35px; left: 2%;    }
+	100% { top: 30px; left: 1%; }
+}
+
+@-webkit-keyframes kapow {
+	0% { left: 75%; opacity: 1; }
+	100% { left: -230%; }
+}
