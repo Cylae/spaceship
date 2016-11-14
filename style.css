@@ -6,78 +6,82 @@
 html {
 	background: #222;
 	overflow-x: hidden;
+    height: 1080px;
+    width: 1920px;  
 }
 
 header {
-	background: grey url(images/cityscape.png) repeat-x;
-	-webkit-animation: move-city-top 15s infinite linear;
-	height: 125px;
+	background: url(images/background.png);
+	-webkit-animation: move-city-top 30s infinite linear;
+	height: 1270px;
 	position: relative;
-	border-top: 10px solid darkblue;
+	border-top: 10px solid darkblue;   
 	border-bottom: 10px solid darkblue;
 }
 
 #rampage {
-	width: 300px;
-	height: 225px;
 	position: absolute;
-	top: -10px;
-	left: 1500px;
-	background: url(images/rampage.png) no-repeat;
+	background: url(images/rampage.png);
+    background-size: 100%;
+    top: 50%;
+    right: 1%;
 	z-index: 3;
 	-webkit-animation: 
-		shimmy-shimmy-shake 2s 2s infinite alternate,
-		show-yourself 1s 1;
+        show-yourself 1s 1s linear,
+        shimmy-shimmy-shake 3s 2s linear alternate infinite;
 }
 
 #rampage:hover {
-    background: url(images/explosion.gif) no-repeat;
-    background-size: 80%;
-    margin-left: auto;
-    margin-right: auto
-}
-
-#rampage img:hover{
-    margin-top: -150px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto
+    -webkit-animation: bigger 2s linear;
 }
 
 #coptor {
 	position: absolute;
-	top: 30px;
-	left: 100%;
+    top: 50%;
+    left: 110%;
     margin-left: -20%;
 	-webkit-animation: fly-by-night 3s linear infinite;
 	z-index: 50;
 }
 
-.bullet {
+#coptor2 {
 	position: absolute;
-	top: 0px;
-	left: 49%;
-	opacity: 0;
-	-webkit-animation: kapow 2s 1.5s linear infinite;
-	z-index: 49;
-	width: 0px; 
-	height: 0px;
-	background: white;
+    margin-left: -20%;
+	-webkit-animation: fly-by-night2 3s linear infinite;
+	z-index: 50;
+}
+
+#coptor3 {
+	position: absolute;
+    margin-left: -20%;
+	-webkit-animation: fly-by-night3 3s linear infinite;
+	z-index: 50;
+}
+
+#coptor4 {
+	position: absolute;
+    margin-left: -20%;
+	-webkit-animation: fly-by-night4 3s linear infinite;
+	z-index: 50;
+}
+
+#coptor5 {
+	position: absolute;
+    margin-left: -20%;
+	-webkit-animation: fly-by-night5 3s linear infinite;
+	z-index: 50;
 }
 
 #meteor{
-    position: absolute;
-	top: 30px;
-	left: 65%;
-    -webkit-animation: boom 2s 2s linear infinite;
+    position:absolute;
+    -webkit-animation: meteor-move 2s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
 }
 
 #meteor2{
-    position: absolute;
-	top: 30px;
-	left: 30%;
-    -webkit-animation: boom2 10s 2s linear infinite;   
+    position:absolute;
+    -webkit-animation: meteor2-move 3s cubic-bezier(0.455, 0.030, 0.515, 0.955) infinite;
 }
+
 
 
 
@@ -100,29 +104,81 @@ header {
 }
 
 @-webkit-keyframes shimmy-shimmy-shake {
-	0%  {  top: -30px; left: 1500px; }
-	20% { top: -35px; left: 1550px;   }
-	60% { top: -25px; left: 1550px;   }
-	80% { top: -30px; left: 1500px;   }
-	100% { top: -30px; left: 1500px; }
+	0%  {  top: 50%; right: 10%; }
+	20% { top: 55%; right: 12%;   }
+	40% { top: 45; right: 10%;   }
+	60% { top: 40%; right: 12%;   }
+	80% { top: 50%; right: 11%;   }
+    90% { top: 45%; right: 12%;    }
+	100% { top: 50 %; right: 10%; }
 }
 
 @-webkit-keyframes show-yourself {
-	from { left: 3500px; }
-	to   { left: 1500px; }
-}
+	from { right: -50%; }
+	to   { right: 10%; }
+}   
 
 @-webkit-keyframes fly-by-night {
-	0%  {  top: 30px; left: 1%; }
-	20% { top: 35px; left: 2%;   }
-	40% { top: 30px; left: 1%;   }
-	60% { top: 25px; left: 2%;   }
-	80% { top: 30px; left: 1%;   }
-    90% { top:35px; left: 2%;    }
-	100% { top: 30px; left: 1%; }
+	0%  {  top: 5%; left: 1%; }
+	20% { top: 6%; left: 2%;   }
+	40% { top: 5%; left: 1%;   }
+	60% { top: 6%; left: 2%;   }
+	80% { top: 5%; left: 1%;   }
+    90% { top: 6%; left: 2%;    }
+	100% { top: 5%; left: 1%; }
 }
 
-@-webkit-keyframes kapow {
-	0% { left: 75%; opacity: 1; }
-	100% { left: -230%; }
+@-webkit-keyframes fly-by-night2 {
+	0%  {  top: 15%; left: 5%; }
+	20% { top: 16%; left: 4%;   }
+	40% { top: 15%; left: 5%;   }
+	60% { top: 16%; left: 4%;   }
+	80% { top: 15%; left: 5%;   }
+    90% { top: 16%; left: 4%;    }
+	100% { top: 15%; left: 5%; }
+}
+
+@-webkit-keyframes fly-by-night3 {
+	0%  {  top: 30%; left: 1%; }
+	20% { top: 35%; left: 2%;   }
+	40% { top: 30%; left: 1%;   }
+	60% { top: 31%; left: 2%;   }
+	80% { top: 30%; left: 1%;   }
+    90% { top: 35%; left: 2%;    }
+	100% { top: 30%; left: 1%; }
+}
+
+@-webkit-keyframes fly-by-night4 {
+	0%  {  top: 50%; left: 1%; }
+	20% { top: 55%; left: 2%;   }
+	40% { top: 52%; left: 1%;   }
+	60% { top: 55%; left: 2%;   }
+	80% { top: 53%; left: 1%;   }
+    90% { top: 52%; left: 2%;    }
+	100% { top: 50%; left: 1%; }
+}
+
+@-webkit-keyframes fly-by-night5 {
+	0%  {  top: 70%; left: 1%; }
+	20% { top: 72%; left: 2%;   }
+	40% { top: 71%; left: 1%;   }
+	60% { top: 75%; left: 2%;   }
+	80% { top: 72%; left: 1%;   }
+    90% { top: 71%; left: 2%;    }
+	100% { top: 70%; left: 1%; }
+}
+
+@-webkit-keyframes meteor-move {
+    0% { top: -10%; left: 35%; transform: scale(0.5)}
+    100% { top:100%; left:100%; transform: scale(1)}
+}
+
+@-webkit-keyframes meteor2-move {
+    0% { top: -10%; left: 15%; }
+    100% { top:110%; left:70%; }
+}
+
+@-webkit-keyframes bigger {
+    0% { height: 100%; width: 100%; top: 50% }
+    100% { height: 120%; width: 120%; top: 50% }
 }
